@@ -3,7 +3,8 @@
 
 def create_db():
     import sqlite3
-    connection = sqlite3.connect("targets.db")
+    from main import db_name
+    connection = sqlite3.connect(db_name)
     cursor = connection.cursor()
     cursor.execute("CREATE TABLE hosts (name TEXT, ip_address TEXT, port_start INTEGER, port_end INTEGER)")
     connection.commit()
@@ -20,5 +21,5 @@ def print_db():
     connection.close()
 
 if __name__ == '__main__':
-    #create_db()
-    print_db()
+    create_db()
+    #print_db()
