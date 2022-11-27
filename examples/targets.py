@@ -2,8 +2,6 @@
 
 
 def target():
-    import sqlite3
-    from main import db_name
     con_db = "modules/" + db_name
     target_ip = input('Enter the target ip address: ')
     beginning = int(input('Enter the targets beginning port: '))

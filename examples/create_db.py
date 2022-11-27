@@ -4,7 +4,8 @@
 def create_db():
     import sqlite3
     from main import db_name
-    connection = sqlite3.connect(db_name)
+    new_db = "modules/" + db_name
+    connection = sqlite3.connect(new_db)
     cursor = connection.cursor()
     cursor.execute("CREATE TABLE hosts (name TEXT, ip_address TEXT, port_start INTEGER, port_end INTEGER)")
     connection.commit()
@@ -13,7 +14,7 @@ def create_db():
 
 def print_db():
     import sqlite3
-    connection = sqlite3.connect("modules/targets.db")
+    connection = sqlite3.connect(db_name)
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM hosts")
     print(cursor.fetchall())
