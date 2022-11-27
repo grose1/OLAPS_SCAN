@@ -3,6 +3,7 @@
 import pyfiglet
 from modules.new_scan import *
 from modules.use_db import *
+from modules.scans import *
 title = pyfiglet.figlet_format("Oh Look , Another Port Scanner", font="doom")
 
 
@@ -19,6 +20,7 @@ def main():
     if selection == '1':
         new_db()
         target()
+        new_scan_menu()
         print('Database created.')
     if selection == '2':
         select_db()

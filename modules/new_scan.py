@@ -10,6 +10,7 @@ def new_db():
     connection.commit()
     connection.close()
 
+
 def target():
     import sqlite3
     global target_ip
@@ -22,7 +23,19 @@ def target():
     scan_name = input('Enter the name of the scan: ')
     connection = sqlite3.connect(con_db)
     cursor = connection.cursor()
-    cursor.execute("INSERT INTO hosts (name, ip_address, port_start, port_end) VALUES (?,?,?,?)", (scan_name, target_ip, beginning, ending))
+    cursor.execute("INSERT INTO hosts (name, ip_address, port_start, port_end) VALUES (?,?,?,?)",
+                   (scan_name, target_ip, beginning, ending))
     connection.commit()
     connection.close()
 
+
+def new_scan_menu():
+    from modules.scans import basic_scan
+    from modules.scans import advanced_scan
+    print('1. Basic scan.')
+    print('2. Advanced scan.')
+    selection = input('Enter your selection: ')
+    if selection == '1':
+        basic_scan()
+    elif selection == '2':
+        advanced_scan()
