@@ -2,18 +2,18 @@
 # Create scans and save them to a database.
 import pyfiglet
 from modules.new_scan import *
-
+from modules.use_db import *
 title = pyfiglet.figlet_format("Oh Look , Another Port Scanner", font="doom")
 
 
 def main():
     print(title)
-    print('Welcome to the network scanner utility.')
+    print('A network scanning utility that saves results to a database.')
     print('Please select an option from the menu below.')
     print('1. Create a new scan database.')
-    print('2. Run a basic scan.')
-    print('3. View saved scans.')
-    print('4. Select a database.')
+    print('2. Use an existing database.')
+    print('3. Print a database results.')
+    print('4. Exit.')
 
     selection = input('Enter your selection: ')
     if selection == '1':
@@ -21,12 +21,11 @@ def main():
         target()
         print('Database created.')
     if selection == '2':
-        target()
-        basic_scan()
+        select_db()
     elif selection == '3':
         print_db()
     elif selection == '4':
-        select_db()
+        exit()
 
 
 def print_db():
