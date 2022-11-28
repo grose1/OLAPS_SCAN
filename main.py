@@ -32,7 +32,7 @@ def main():
 
 def print_db():
     import sqlite3
-    connection = sqlite3.connect(db_name)
+    connection = sqlite3.connect('database/' + new_scan.db_name)
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM hosts")
     print(cursor.fetchall())

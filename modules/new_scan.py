@@ -4,7 +4,7 @@ def new_db():
     global db_name
     db_input = input('Enter the name of the database: ')
     db_name = db_input + '.db'
-    connection = sqlite3.connect(db_name)
+    connection = sqlite3.connect('database/' + db_name)
     cursor = connection.cursor()
     cursor.execute("CREATE TABLE hosts (name TEXT, ip_address TEXT, port_start INTEGER, port_end INTEGER)")
     connection.commit()
@@ -16,7 +16,7 @@ def target():
     global target_ip
     global beginning
     global ending
-    con_db = db_name
+    con_db = 'database/' + db_name
     target_ip = input('Enter the target ip address: ')
     beginning = int(input('Enter the targets beginning port: '))
     ending = int(input('Enter the targets ending port: '))
