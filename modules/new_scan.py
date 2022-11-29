@@ -16,6 +16,7 @@ def target():
     global target_ip
     global beginning
     global ending
+    global scan_name
     con_db = 'database/' + db_name
     target_ip = input('Enter the target ip address: ')
     beginning = int(input('Enter the targets beginning port: '))
@@ -32,10 +33,12 @@ def target():
 def new_scan_menu():
     from modules.scans import basic_scan
     from modules.scans import advanced_scan
+    from modules.advscan_new_table import advscan_table
     print('1. Basic scan.')
     print('2. Advanced scan.')
     selection = input('Enter your selection: ')
     if selection == '1':
         basic_scan()
     elif selection == '2':
+        advscan_table()
         advanced_scan()
