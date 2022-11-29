@@ -7,6 +7,7 @@ from modules.scans import *
 title = pyfiglet.figlet_format("Oh Look , Another Port Scanner", font="doom")
 
 
+
 def main():
     print(title)
     print('A network scanning utility that saves results to a database.')
