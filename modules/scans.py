@@ -25,6 +25,7 @@ def basic_scan():
                 connection.close()
 
 
+
 # Advanced port scan that returns open ports and saves them to a database.
 def advanced_scan():
     import nmap
