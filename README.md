@@ -1,9 +1,2 @@
- .d88b.  db   db     db       .d88b.   .d88b.  db   dD       .d8b.  d8b   db  .d88b.  d888888b db   db d88888b d8888b.     d8888b.  .d88b.  d8888b. d888888b     .d8888.  .o88b.  .d8b.  d8b   db d8b   db d88888b d8888b. db 
-.8P  Y8. 88   88     88      .8P  Y8. .8P  Y8. 88 ,8P'      d8' `8b 888o  88 .8P  Y8. `~~88~~' 88   88 88'     88  `8D     88  `8D .8P  Y8. 88  `8D `~~88~~'     88'  YP d8P  Y8 d8' `8b 888o  88 888o  88 88'     88  `8D 88 
-88    88 88ooo88     88      88    88 88    88 88,8P        88ooo88 88V8o 88 88    88    88    88ooo88 88ooooo 88oobY'     88oodD' 88    88 88oobY'    88        `8bo.   8P      88ooo88 88V8o 88 88V8o 88 88ooooo 88oobY' YP 
-88    88 88~~~88     88      88    88 88    88 88`8b        88~~~88 88 V8o88 88    88    88    88~~~88 88~~~~~ 88`8b       88~~~   88    88 88`8b      88          `Y8b. 8b      88~~~88 88 V8o88 88 V8o88 88~~~~~ 88`8b      
-`8b  d8' 88   88     88booo. `8b  d8' `8b  d8' 88 `88. db   88   88 88  V888 `8b  d8'    88    88   88 88.     88 `88.     88      `8b  d8' 88 `88.    88        db   8D Y8b  d8 88   88 88  V888 88  V888 88.     88 `88. db 
- `Y88P'  YP   YP     Y88888P  `Y88P'   `Y88P'  YP   YD V8   YP   YP VP   V8P  `Y88P'     YP    YP   YP Y88888P 88   YD     88       `Y88P'  88   YD    YP        `8888Y'  `Y88P' YP   YP VP   V8P VP   V8P Y88888P 88   YD YP 
-                                                        P                                                                                                                                                                     
-                                                                                                                                                                                                                                           
+                                                                                                                                      
 A Network port scanner written in Python.          

@@ -35,11 +35,13 @@ def target():
 def new_scan_menu():
     from modules.scans import basic_scan
     from modules.scans import advanced_scan
-    from modules.advscan_new_table import advscan_table
+    from modules.new_table import advscan_table
+    from modules.new_table import basic_table
     print('1. Basic scan.')
     print('2. Advanced scan.')
     selection = input('Enter your selection: ')
     if selection == '1':
+        basic_table()
         basic_scan()
     elif selection == '2':
         advscan_table()
