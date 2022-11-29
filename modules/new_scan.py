@@ -1,4 +1,4 @@
-
+# Create initial database for a new scan.
 def new_db():
     import sqlite3
     global db_name
@@ -11,6 +11,7 @@ def new_db():
     connection.close()
 
 
+# Defines the target IP address and port range for the scan.
 def target():
     import sqlite3
     global target_ip
@@ -30,6 +31,7 @@ def target():
     connection.close()
 
 
+# Menu for selecting the type of scan to run.
 def new_scan_menu():
     from modules.scans import basic_scan
     from modules.scans import advanced_scan

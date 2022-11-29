@@ -1,7 +1,7 @@
 from modules import new_scan
 
 
-
+# A basic port scan that only returns open ports and saves them to a database.
 def basic_scan():
     import nmap
     scanner = nmap.PortScanner()
@@ -11,6 +11,7 @@ def basic_scan():
         print(f'port {i} is {res}.')
 
 
+# Advanced port scan that returns open ports and saves them to a database.
 def advanced_scan():
     import nmap
     import sqlite3
@@ -30,12 +31,5 @@ def advanced_scan():
                     (new_scan.scan_name, new_scan.target_ip, new_scan.beginning, new_scan.ending, j))
                 connection.commit()
                 connection.close()
-
-
-
-
-
     # sS for SYN scan, sv probe open ports to determine what service and version they are running on
     # O determine OS type, A tells Nmap to make an effort in identifying the target OS
-
-
