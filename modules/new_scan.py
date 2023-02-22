@@ -33,12 +33,14 @@ def target():
 
 # Menu for selecting the type of scan to run.
 def new_scan_menu():
-    from modules.scans import basic_scan
-    from modules.scans import advanced_scan
+    from old.scans import basic_scan
+    from old.scans import advanced_scan
     from modules.new_table import advscan_table
     from modules.new_table import basic_table
+    from modules.nmap3top10 import top10
     print('1. Basic scan.')
     print('2. Advanced scan.')
+    print('3. Top 10 scan.')
     selection = input('Enter your selection: ')
     if selection == '1':
         basic_table()
@@ -46,3 +48,6 @@ def new_scan_menu():
     elif selection == '2':
         advscan_table()
         advanced_scan()
+    elif selection == '3':
+        basic_table()
+        top10()

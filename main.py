@@ -3,7 +3,8 @@
 import pyfiglet
 from modules.new_scan import *
 from modules.use_db import *
-from modules.scans import *
+from modules.nmap3top10 import *
+
 title = pyfiglet.figlet_format("Oh Look , Another Port Scanner", font="doom")
 
 
@@ -16,6 +17,7 @@ def main():
     print('2. Use an existing database.')
     print('3. Print a database results.')
     print('4. Exit.')
+    print('5. Top 10 port scan.')
 
     selection = input('Enter your selection: ')
     if selection == '1':
@@ -29,6 +31,9 @@ def main():
         print_db()
     elif selection == '4':
         exit()
+    elif selection == '5':
+        top10()
+
 
 
 def print_db():
