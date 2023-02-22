@@ -1,4 +1,4 @@
-from modules import new_scan
+from old import new_scan
 
 
 # A basic port scan that only returns open ports and saves them to a database.

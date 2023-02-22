@@ -1,5 +1,4 @@
 # Description: This module will scan the top 10 ports of a target using nmap3. It will then save the results to a database.
-from modules import new_scan
 
 def top10():
     import json
@@ -13,7 +12,7 @@ def top10():
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     #print("date and time =", dt_string)
 
-
+    host = input('Target Name:')
     ip = input('Target IP:')
 
     nmap = nmap3.Nmap()
@@ -29,11 +28,11 @@ def top10():
         c = traffic['state']
 
 
-        conn = sqlite3.connect('D:\\pyhon projects\\OLAPS_SCAN\\database\\top10.db')
+        conn = sqlite3.connect('D:\\pyhon projects\\OLAPS_SCAN\\database\\olaps.db')
         cur = conn.cursor()
-        cur.execute('create table if not exists top10 (host text, protocol text, portid text, state text, date text)')
+        cur.execute('create table if not exists top10 (host text, ip text, protocol text, portid text, state text, date text)')
         conn.commit()
-        cur.execute('INSERT INTO top10 VALUES (?,?,?,?,?)', (ip, a, b, c, dt_string))
+        cur.execute('INSERT INTO top10 VALUES (?,?,?,?,?,?)', (host, ip, a, b, c, dt_string))
         conn.commit()
         conn.close()
 

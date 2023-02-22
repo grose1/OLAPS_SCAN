@@ -1,10 +1,9 @@
 # A network scanning utility written in python.
 # Create scans and save them to a database.
 import pyfiglet
-from modules.new_scan import *
-from modules.use_db import *
 from modules.nmap3top10 import *
-
+from modules.pingscan import *
+from modules.tcpscan import *
 title = pyfiglet.figlet_format("Oh Look , Another Port Scanner", font="doom")
 
 
@@ -13,34 +12,30 @@ def main():
     print(title)
     print('A network scanning utility that saves results to a database.')
     print('Please select an option from the menu below.')
-    print('1. Create a new scan database.')
-    print('2. Use an existing database.')
+    print('1. Top 10 port scan.')
+    print('2. Ping scan.')
     print('3. Print a database results.')
-    print('4. Exit.')
-    print('5. Top 10 port scan.')
+    print('4. TCP scan.')
+    
 
     selection = input('Enter your selection: ')
     if selection == '1':
-        new_db()
-        target()
-        new_scan_menu()
-        print('Database created.')
+        top10()
     if selection == '2':
-        select_db()
+        pingscan()
     elif selection == '3':
         print_db()
     elif selection == '4':
-        exit()
-    elif selection == '5':
-        top10()
+        tcpscan()
 
-
+        
 
 def print_db():
     import sqlite3
-    connection = sqlite3.connect('database/' + new_scan.db_name)
+    table = input('Enter the name of the table you want to print: ')
+    connection = sqlite3.connect('database/olaps.db')
     cursor = connection.cursor()
-    cursor.execute("SELECT * FROM hosts")
+    cursor.execute("SELECT * FROM " + table + " ")
     print(cursor.fetchall())
     connection.commit()
     connection.close()
