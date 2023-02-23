@@ -28,7 +28,7 @@ def top10():
         c = traffic['state']
 
 
-        conn = sqlite3.connect('D:\\pyhon projects\\OLAPS_SCAN\\database\\olaps.db')
+        conn = sqlite3.connect('olaps.db')
         cur = conn.cursor()
         cur.execute('create table if not exists top10 (host text, ip text, protocol text, portid text, state text, date text)')
         conn.commit()

@@ -18,21 +18,22 @@ def tcpscan():
     jd = json.dumps(result[ip]['ports'])
     l = json.loads(jd)
     for k in l:
-        a = k['protocol']
-        b = k['portid']
-        c = k['state']
-        d = k['service']['name']
-        print(a)
-        print(b)
-        print(c)
-        print(d)
+        n = k
+        a = n['protocol']
+        b = n['portid']
+        c = n['state']
+        d = n['service']['name']
+        #print(a)
+        #print(b)
+        #print(c)
+        #print(d)
 
     #Save to database
-    conn = sqlite3.connect('D:\\pyhon projects\\OLAPS_SCAN\\database\\olaps.db')
+    conn = sqlite3.connect('olaps.db')
     cur = conn.cursor()
-    cur.execute('create table if not exists tcp_scan (host text, ip text, port text, state text, service text, date text)')
+    cur.execute('create table if not exists tcp_scan (host text, ip text, protocol text, port text, state text, service text, date text)')
     conn.commit()
-    cur.execute('INSERT INTO tcp_scan VALUES (?,?,?,?,?,?)', (host, ip, a, b, c, dt_string))
+    cur.execute('INSERT INTO tcp_scan VALUES (?,?,?,?,?,?,?)', (host, ip, a, b, c, d, dt_string))
     conn.commit()
     conn.close()
 

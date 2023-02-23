@@ -18,7 +18,7 @@ def pingscan():
     d = json.dumps(result['runtime']['summary'])
 
     #Save to database
-    conn = sqlite3.connect('D:\\pyhon projects\\OLAPS_SCAN\\database\\olaps.db')
+    conn = sqlite3.connect('olaps.db')
     cur = conn.cursor()
     cur.execute('create table if not exists ping_scan (host text, ip text, results text, date text)')
     conn.commit()
